@@ -77,8 +77,7 @@ Modelo relacional em PostgreSQL aplicando os conceitos de **autorelacionamento**
     string nome_equipamento
     int funcionario_id FK
     int projeto_id FK
-  }
-```
+  }```
 
 ---
 
