@@ -12,6 +12,7 @@ erDiagram
   PESSOA ||--o{ ENDERECO : "possui"
   PESSOA ||--o{ TELEFONE : "possui"
   PESSOA ||--|| FUNCIONARIO : "é um"
+  PESSOA ||--|| DEPENDENTE : "é um"
   FUNCIONARIO ||--o{ FUNCIONARIO : "supervisiona"
   FUNCIONARIO ||--o{ DEPENDENTE : "possui"
   FUNCIONARIO ||--o{ ALOCACAO : "participa"
@@ -54,10 +55,8 @@ erDiagram
 
   DEPENDENTE {
     int id PK
+    int pessoa_id FK
     int funcionario_id FK
-    string nome
-    char sexo
-    date data_nascimento
     string parentesco
   }
 
@@ -67,6 +66,7 @@ erDiagram
   }
 
   ALOCACAO {
+    int id PK
     int funcionario_id FK
     int projeto_id FK
     string funcao
@@ -76,8 +76,7 @@ erDiagram
   EQUIPAMENTO {
     int id PK
     string nome_equipamento
-    int funcionario_id FK
-    int projeto_id FK
+    int alocacao_id FK
   }
 ```
 
