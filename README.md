@@ -7,15 +7,16 @@ Modelo relacional em PostgreSQL aplicando os conceitos de **autorelacionamento**
 
 ## Diagrama ER
 
-```erDiagram
+```mermaid
+erDiagram
   PESSOA ||--o{ ENDERECO : "possui"
   PESSOA ||--o{ TELEFONE : "possui"
-  PESSOA ||--|| FUNCIONARIO : "e um"
+  PESSOA ||--|| FUNCIONARIO : "é um"
   FUNCIONARIO ||--o{ FUNCIONARIO : "supervisiona"
   FUNCIONARIO ||--o{ DEPENDENTE : "possui"
   FUNCIONARIO ||--o{ ALOCACAO : "participa"
-  PROJETO ||--o{ ALOCACAO : "contem"
-  ALOCACAO ||--o{ EQUIPAMENTO : "utiliza (agregacao)"
+  PROJETO ||--o{ ALOCACAO : "contém"
+  ALOCACAO ||--o{ EQUIPAMENTO : "utiliza (agregação)"
 
   PESSOA {
     int id PK
@@ -77,7 +78,8 @@ Modelo relacional em PostgreSQL aplicando os conceitos de **autorelacionamento**
     string nome_equipamento
     int funcionario_id FK
     int projeto_id FK
-  }```
+  }
+```
 
 ---
 
